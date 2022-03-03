@@ -5,6 +5,7 @@
 #include <regex>
 #include "Day01.h"
 #include "Day02.h"
+#include "Day03.h"
 
 int main()
 {
@@ -15,6 +16,10 @@ int main()
     Day02 d02;
     d02.Puzzle1();
     d02.Puzzle2();
+
+    Day03 d03;
+    d03.Puzzle1();
+    d03.Puzzle2();
 
     return 0;
 }
