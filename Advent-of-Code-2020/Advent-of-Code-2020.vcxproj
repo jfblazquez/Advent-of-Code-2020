@@ -23,16 +23,19 @@
     <ClCompile Include="src\Day01.cpp" />
     <ClCompile Include="src\Day02.cpp" />
     <ClCompile Include="src\Day03.cpp" />
+    <ClCompile Include="src\Day04.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Day01.h" />
     <ClInclude Include="src\Day02.h" />
     <ClInclude Include="src\Day03.h" />
+    <ClInclude Include="src\Day04.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="inputs\Day01.txt" />
     <Text Include="inputs\Day02.txt" />
     <Text Include="inputs\Day03.txt" />
+    <Text Include="inputs\Day04.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
