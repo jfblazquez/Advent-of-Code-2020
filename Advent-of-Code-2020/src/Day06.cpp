@@ -40,23 +40,21 @@ void Day06::ReadData()
 		return;
 	}
 
-	shared_ptr<Group> g = make_shared<Group>();
-	mGroups.push_back(g);
+	mGroups.emplace_back(make_unique<Group>());
 	string line;
 	while (getline(ifs, line))
 	{
 		if (line.empty())
 		{
-			g = make_shared<Group>();
-			mGroups.push_back(g);
+			mGroups.emplace_back(make_unique<Group>());
 		}
 		else
 		{
-			g->mGroupSize++;
+			mGroups.back()->mGroupSize++;
 			for (const char& c : line)
 			{
-				g->mYesQuestions.insert(c);
-				g->mTotalYesQuestions[c]++;
+				mGroups.back()->mYesQuestions.insert(c);
+				mGroups.back()->mTotalYesQuestions[c]++;
 			}
 		}
 	}

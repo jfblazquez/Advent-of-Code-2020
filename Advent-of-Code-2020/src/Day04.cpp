@@ -17,12 +17,12 @@ Day04::Day04() : mInputFile{ "inputs/day04.txt" }
 
 void Day04::Puzzle1()
 {
-	cout << "Puzzle 1 answer: " << std::count_if(mPassports.begin(), mPassports.end(), [](shared_ptr<Passport> p){ return p->IsValid(false); }) << endl;
+	cout << "Puzzle 1 answer: " << std::count_if(mPassports.begin(), mPassports.end(), [](const unique_ptr<Passport>& p){ return p->IsValid(false); }) << endl;
 }
 
 void Day04::Puzzle2()
 {
-	cout << "Puzzle 2 answer: " << std::count_if(mPassports.begin(), mPassports.end(), [](shared_ptr<Passport> p) { return p->IsValid(true); }) << endl;
+	cout << "Puzzle 2 answer: " << std::count_if(mPassports.begin(), mPassports.end(), [](const unique_ptr<Passport>& p) { return p->IsValid(true); }) << endl;
 }
 
 void Day04::ReadData()
@@ -33,15 +33,13 @@ void Day04::ReadData()
 		return;
 	}
 
-	shared_ptr<Passport> p = make_shared<Passport>();
-	mPassports.push_back(p);
+	mPassports.emplace_back(make_unique<Passport>());
 	string line;
 	while (getline(ifs, line))
 	{
 		if (line.empty())
 		{
-			p = make_shared<Passport>();
-			mPassports.push_back(p);
+			mPassports.emplace_back(make_unique<Passport>());
 		}
 		else
 		{
@@ -51,7 +49,7 @@ void Day04::ReadData()
 			{
 				string key = m[1].str();
 				string value = m[2].str();
-				p->AddField(key, value);
+				mPassports.back()->AddField(key, value);
 				line = m.suffix();
 			}
 		}

@@ -36,6 +36,6 @@ private:
 	void ReadData();
 
 	std::string mInputFile;
-	std::vector<std::shared_ptr<Passport>> mPassports;
+	std::vector<std::unique_ptr<Passport>> mPassports;
 };
 

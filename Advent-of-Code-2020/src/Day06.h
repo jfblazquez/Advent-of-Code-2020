@@ -29,6 +29,6 @@ private:
 	void ReadData();
 
 	std::string mInputFile;
-	std::vector<std::shared_ptr<Group>> mGroups;
+	std::vector<std::unique_ptr<Group>> mGroups;
 };
 
