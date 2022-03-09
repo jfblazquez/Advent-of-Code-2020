@@ -16,26 +16,15 @@ Day07::Day07() : mInputFile{ "inputs/day07.txt" }
     ReadData();
 }
 
-Day07::~Day07()
-{
-	mContentGraph.clear();
-	mContainerGraph.clear();
-	for (const auto& b : mBags)
-	{
-		delete b.second;
-	}
-	mBags.clear();
-}
-
 void Day07::Puzzle1()
 {
-	stack<Bag*> stack;
+	stack<shared_ptr<Bag>> stack;
 	stack.push(mBags[TARGET_BAG]);
-	set<Bag*> visitedBags;
+	set<shared_ptr<Bag>> visitedBags;
 
 	while (!stack.empty())
 	{
-		Bag* current = stack.top();
+		shared_ptr<Bag> current = stack.top();
 		stack.pop();
 
 		if (visitedBags.count(current) == 0)
@@ -48,7 +37,7 @@ void Day07::Puzzle1()
 		}
 	}
 
-	int c = std::count_if(visitedBags.begin(), visitedBags.end(), [](Bag* b) {return b->name != TARGET_BAG; });
+	int c = std::count_if(visitedBags.begin(), visitedBags.end(), [](const shared_ptr<Bag>& b) {return b->name != TARGET_BAG; });
 
 	cout << "Puzzle 1 answer: " << c << endl;
 }
@@ -59,7 +48,7 @@ void Day07::Puzzle2()
 	cout << "Puzzle 2 answer: " << c << endl;
 }
 
-int Day07::BagsInside(Bag* b)
+int Day07::BagsInside(const shared_ptr<Bag>& b)
 {
 	int c = 0;
 
@@ -99,10 +88,10 @@ void Day07::ReadData()
 		// Add container bag
 		if (!mBags.count(container))
 		{
-			mBags.insert(make_pair(container, new Bag(container)));
+			mBags.insert(make_pair(container, make_shared<Bag>(container)));
 		}
-		Bag* bagContainer = mBags[container];
-		mContainerGraph.insert(make_pair(bagContainer, vector<pair<Bag*, int>>()));
+		std::shared_ptr<Bag> bagContainer = mBags[container];
+		mContainerGraph.insert(make_pair(bagContainer, vector<pair<std::shared_ptr<Bag>, int>>()));
 
 		// Add content bags
 		for (const auto& b : contents)
@@ -111,11 +100,11 @@ void Day07::ReadData()
 			{
 				mBags.insert(make_pair(b.second, new Bag(b.second)));
 			}
-			Bag* bagContent = mBags[b.second];
+			std::shared_ptr<Bag> bagContent = mBags[b.second];
 
 			if (!mContentGraph.count(bagContent))
 			{
-				mContentGraph.insert(make_pair(bagContent, vector<Bag*>()));
+				mContentGraph.insert(make_pair(bagContent, vector<std::shared_ptr<Bag>>()));
 			}
 
 			mContentGraph[bagContent].push_back(bagContainer);
