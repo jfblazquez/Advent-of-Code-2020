@@ -10,6 +10,7 @@
 #include "Day05.h"
 #include "Day06.h"
 #include "Day07.h"
+#include "Day08.h"
 
 int main()
 {
@@ -40,6 +41,10 @@ int main()
     Day07 d07;
     d07.Puzzle1();
     d07.Puzzle2();
+
+    Day08 d08;
+    d08.Puzzle1();
+    d08.Puzzle2();
 
     return 0;
 }
