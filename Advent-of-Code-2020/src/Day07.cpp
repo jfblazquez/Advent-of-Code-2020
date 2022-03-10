@@ -70,14 +70,15 @@ void Day07::ReadData()
 
 	int id = 0;
 
-	regex regex_container{ "([a-z]+ [a-z]+) (bags)" };
+	regex regex_container{ "([a-z ]+) bags" };
+	regex regex_contents{ "([0-9]+) ([a-z ]+) bags?" };
 	smatch matches;
 	for (string line; getline(ifs, line);)
 	{
 		regex_search(line, matches, regex_container);
 		string container{ matches[1]};
-
-		regex regex_contents{ "([0-9]+) ([a-z]+ [a-z]+) (bag[s]?)" };
+		line = matches.suffix();
+		
 		vector<pair<int, string>> contents;
 		while (regex_search(line, matches, regex_contents))
 		{
