@@ -11,6 +11,7 @@
 #include "Day06.h"
 #include "Day07.h"
 #include "Day08.h"
+#include "Day09.h"
 
 int main()
 {
@@ -46,6 +47,9 @@ int main()
     d08.Puzzle1();
     d08.Puzzle2();
 
+    Day09 d09;
+    d09.Puzzle1();
+    d09.Puzzle2();
+
     return 0;
 }
-
