@@ -45,6 +45,9 @@
     <ClCompile Include="src\Day09.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="src\Day10.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Day01.h">
@@ -74,6 +77,9 @@
     <ClInclude Include="src\Day09.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="src\Day10.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="inputs\Day01.txt">
@@ -101,6 +107,9 @@
       <Filter>Archivos de recursos</Filter>
     </Text>
     <Text Include="inputs\Day09.txt">
+      <Filter>Archivos de recursos</Filter>
+    </Text>
+    <Text Include="inputs\Day10.txt">
       <Filter>Archivos de recursos</Filter>
     </Text>
   </ItemGroup>

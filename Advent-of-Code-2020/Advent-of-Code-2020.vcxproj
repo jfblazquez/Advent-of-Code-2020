@@ -29,6 +29,7 @@
     <ClCompile Include="src\Day07.cpp" />
     <ClCompile Include="src\Day08.cpp" />
     <ClCompile Include="src\Day09.cpp" />
+    <ClCompile Include="src\Day10.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Day01.h" />
@@ -40,6 +41,7 @@
     <ClInclude Include="src\Day07.h" />
     <ClInclude Include="src\Day08.h" />
     <ClInclude Include="src\Day09.h" />
+    <ClInclude Include="src\Day10.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="inputs\Day01.txt" />
@@ -51,6 +53,7 @@
     <Text Include="inputs\Day07.txt" />
     <Text Include="inputs\Day08.txt" />
     <Text Include="inputs\Day09.txt" />
+    <Text Include="inputs\Day10.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
