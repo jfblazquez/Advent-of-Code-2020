@@ -1,8 +1,3 @@
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <string>
-#include <regex>
 #include "Day01.h"
 #include "Day02.h"
 #include "Day03.h"
@@ -13,6 +8,7 @@
 #include "Day08.h"
 #include "Day09.h"
 #include "Day10.h"
+#include "Day11.h"
 
 int main()
 {
@@ -55,6 +51,10 @@ int main()
     Day10 d10;
     d10.Puzzle1();
     d10.Puzzle2();
+
+    Day11 d11;
+    d11.Puzzle1();
+    d11.Puzzle2();
 
     return 0;
 }
