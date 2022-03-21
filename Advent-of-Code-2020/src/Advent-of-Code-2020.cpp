@@ -16,7 +16,7 @@
 
 int main()
 {
-    /*Day01 d01;
+    Day01 d01;
     d01.Puzzle1();
     d01.Puzzle2();
 
@@ -70,7 +70,7 @@ int main()
 
     Day14 d14;
     d14.Puzzle1();
-    d14.Puzzle2();*/
+    d14.Puzzle2();
 
     Day15 d15;
     d15.Puzzle1();
