@@ -1,8 +1,7 @@
 #include "Day15.h"
 #include <fstream>
 #include <iostream>
-#include <map>
-#include <utility>
+#include <unordered_map>
 
 using namespace std;
 
@@ -13,7 +12,7 @@ Day15::Day15()
 
 void Day15::Puzzle1()
 {
-	map<int, int> numbers = { {6,1}, {19,2}, {0,3}, {5,4}, {7,5}, {13,6} };
+	unordered_map<int, int> numbers = { {6,1}, {19,2}, {0,3}, {5,4}, {7,5}, {13,6} };
 	// Last turn and number are not in map yet
 	int lastNumber = 1;
 	int turn = 8;
@@ -36,7 +35,7 @@ void Day15::Puzzle1()
 
 void Day15::Puzzle2()
 {
-	map<int, int> numbers = { {6,1}, {19,2}, {0,3}, {5,4}, {7,5}, {13,6} };
+	unordered_map<int, int> numbers = { {6,1}, {19,2}, {0,3}, {5,4}, {7,5}, {13,6} };
 	// Last turn and number are not in map yet
 	int lastNumber = 1;
 	int turn = 8;
