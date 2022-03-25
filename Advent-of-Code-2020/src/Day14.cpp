@@ -5,6 +5,7 @@
 #include <iostream>
 #include <numeric>
 #include <regex>
+#include <cmath>
 
 using namespace std;
 
@@ -82,7 +83,7 @@ void Day14::ExecProgram2()
 			auto xs = count(floatingAddress.begin(), floatingAddress.end(), 'X');
 
 			// Go throught all possibilities and replace 'X' with the correct bit
-			for (int i = 0; i < pow(2, xs); ++i)
+			for (int i = 0; i < std::pow(2, xs); ++i)
 			{
 				string newAddress{ floatingAddress };
 				int j = static_cast<int>(pow(2, xs-1)); // Most significant bit

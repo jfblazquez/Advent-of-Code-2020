@@ -4,6 +4,7 @@
 #include <utility>
 #include <memory>
 #include <iostream>
+#include <vector>
 
 struct Bag
 {

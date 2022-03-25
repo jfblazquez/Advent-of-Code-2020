@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <algorithm>
+#include <stdexcept>
 
 using namespace std;
 
@@ -63,6 +64,7 @@ long long Day09::FindInvalidNumber()
 		}
 		mCurrentValues.insert(make_pair(n, std::vector<long long>()));
 	}
+	throw std::runtime_error("Value not found");
 }
 
 std::pair<int, int> Day09::FindSubVector(const long long target)
