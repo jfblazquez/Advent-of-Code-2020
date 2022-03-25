@@ -9,7 +9,7 @@ using namespace std;
 
 vector<string> validKeys{ "byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid", "cid" };
 
-Day04::Day04() : mInputFile{ "inputs/day04.txt" }
+Day04::Day04() : mInputFile{ "inputs/Day04.txt" }
 {
 	cout << endl << "DAY 04" << endl;
     ReadData();
@@ -75,13 +75,13 @@ bool Passport::IsValid(bool validateFields)
 	if (mFields.size() == 8 ||
 		(mFields.size() == 7 && mFields.count("cid") == 0))
 	{
-		return !validateFields || BirthYearValid() &&
+		return !validateFields || (BirthYearValid() &&
 			IssueYearValid() &&
 			ExpirationYearValid() &&
 			HeightValid() &&
 			HairColorValid() &&
 			EyeColorValid() &&
-			IdValid();
+			IdValid());
 	}
 	return false;
 }

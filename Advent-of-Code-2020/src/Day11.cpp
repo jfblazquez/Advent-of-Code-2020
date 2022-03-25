@@ -8,7 +8,7 @@
 using namespace std;
 
 Day11::Day11() : 
-	mInputFile{ "inputs/day11.txt" },
+	mInputFile{ "inputs/Day11.txt" },
 	mSeatsSource{ make_unique<std::vector<std::string>>() },
 	mSeatsTarget{ make_unique<std::vector<std::string>>() }
 {
@@ -24,9 +24,9 @@ void Day11::Puzzle1()
 	do
 	{
 		changes = 0;
-		for (int row = 0; row < mSeatsSource->size(); ++row)
+		for (size_t row = 0; row < mSeatsSource->size(); ++row)
 		{
-			for (int col = 0; col < (*mSeatsSource)[row].size(); ++col)
+			for (size_t col = 0; col < (*mSeatsSource)[row].size(); ++col)
 			{
 				if (ProcessSeatWithAdjacents(row, col, mSeatsSource, mSeatsTarget))
 				{
@@ -50,9 +50,9 @@ void Day11::Puzzle2()
 	do
 	{
 		changes = 0;
-		for (int row = 0; row < mSeatsSource->size(); ++row)
+		for (size_t row = 0; row < mSeatsSource->size(); ++row)
 		{
-			for (int col = 0; col < (*mSeatsSource)[row].size(); ++col)
+			for (size_t col = 0; col < (*mSeatsSource)[row].size(); ++col)
 			{
 				if (ProcessSeatWithLineOfSight(row, col, mSeatsSource, mSeatsTarget))
 				{
@@ -106,8 +106,8 @@ int Day11::AdjacentOccupiedSeats(int row, int col,
 		{
 			if (r == row && c == col) continue;
 
-			if (r >= 0 && r < source->size() &&
-				c >= 0 && c < (*source)[r].size())
+			if (r >= 0 && r < static_cast<int>(source->size()) &&
+				c >= 0 && c < static_cast<int>((*source)[r].size()))
 			{
 				if ((*source)[r][c] == '#')
 				{
@@ -210,9 +210,9 @@ int Day11::LineOfSightOccupied(int row, int col,
 int Day11::CountOccupiedSeats(const unique_ptr<vector<string>>& source)
 {
 	int occupiedSeats = 0;
-	for (int row = 0; row < source->size(); ++row)
+	for (size_t row = 0; row < source->size(); ++row)
 	{
-		for (int col = 0; col < (*source)[row].size(); ++col)
+		for (size_t col = 0; col < (*source)[row].size(); ++col)
 		{
 			if ((*source)[row][col] == '#') ++occupiedSeats;
 		}

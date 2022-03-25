@@ -7,7 +7,7 @@
 
 using namespace std;
 
-Day10::Day10() : mInputFile{ "inputs/day10.txt" }
+Day10::Day10() : mInputFile{ "inputs/Day10.txt" }
 {
 	cout << endl << "DAY 10" << endl;
     ReadData();
@@ -23,7 +23,7 @@ void Day10::Puzzle1()
 	int jump1 = 0;
 	int jump3 = 0;
 	std::sort(mJoltages.begin(), mJoltages.end());
-	for (int i = 1; i < mJoltages.size(); ++i)
+	for (size_t i = 1; i < mJoltages.size(); ++i)
 	{
 		if (mJoltages[i] - mJoltages[i - 1] == 1)
 		{

@@ -7,7 +7,7 @@
 
 using namespace std;
 
-Day13::Day13() : mInputFile{ "inputs/day13.txt" }
+Day13::Day13() : mInputFile{ "inputs/Day13.txt" }
 {
 	cout << endl << "DAY 13" << endl;
     ReadData();
@@ -18,7 +18,7 @@ void Day13::Puzzle1()
 	int mBestBus{ 0 };
 	int mBestDepartureTime{ std::numeric_limits<int>::max() };
 	
-	for (int i = 0; i < mBuses.size(); ++i)
+	for (size_t i = 0; i < mBuses.size(); ++i)
 	{
 		int bus = mBuses[i];
 		int nextDeparture = bus * ceil(mFrom / (double)bus);

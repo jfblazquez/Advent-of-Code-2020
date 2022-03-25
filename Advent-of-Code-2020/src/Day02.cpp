@@ -5,7 +5,8 @@
 
 using namespace std;
 
-Day02::Day02() : mInputFile{ "inputs/day02.txt" }
+
+Day02::Day02() : mInputFile{ "inputs/Day02.txt" }
 {
     cout << endl << "DAY 02" << endl;
 }
@@ -55,7 +56,7 @@ void Day02::Puzzle2()
             char token = matches[3].str()[0];
             std::string password = matches[4].str();
 
-            if(password[low - 1] == token ^ password[high - 1] == token)
+            if((password[low - 1] == token) ^ (password[high - 1] == token))
             {
                 ++validPasswords;
             }

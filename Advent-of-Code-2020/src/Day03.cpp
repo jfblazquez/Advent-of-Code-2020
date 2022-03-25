@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Day03::Day03() : mInputFile{ "inputs/day03.txt" }
+Day03::Day03() : mInputFile{ "inputs/Day03.txt" }
 {
 	cout << endl << "DAY 03" << endl;
     ReadData();

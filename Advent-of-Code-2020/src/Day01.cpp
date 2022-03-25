@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Day01::Day01() : mInputFile{"inputs/day01.txt"}
+Day01::Day01() : mInputFile{"inputs/Day01.txt"}
 {
     cout << endl << "DAY 01" << endl;
     ReadData();
@@ -51,7 +51,7 @@ void Day01::Puzzle2()
 void Day01::ReadData()
 {
     ifstream ifs(mInputFile, ios::binary);
-    while (!ifs.eof()) {
+    while (ifs.good()) {
         int d;
         ifs >> d;
         mData.push_back(d);

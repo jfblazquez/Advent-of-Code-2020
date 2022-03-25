@@ -9,7 +9,7 @@
 
 using namespace std;
 
-Day14::Day14() : mInputFile{ "inputs/day14.txt" }
+Day14::Day14() : mInputFile{ "inputs/Day14.txt" }
 {
 	cout << endl << "DAY 14" << endl;
     ReadData();
@@ -72,7 +72,7 @@ void Day14::ExecProgram2()
 			long long value = m.second;
 
 			string floatingAddress = bitset<36>(address).to_string();
-			for (int i = 0; i < mask.size(); ++i)
+			for (size_t i = 0; i < mask.size(); ++i)
 			{
 				if (mask[i] != '0')
 				{

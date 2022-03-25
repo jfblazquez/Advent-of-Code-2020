@@ -10,7 +10,7 @@ using namespace std;
 
 const string TARGET_BAG = "shiny gold";
 
-Day07::Day07() : mInputFile{ "inputs/day07.txt" }
+Day07::Day07() : mInputFile{ "inputs/Day07.txt" }
 {
 	cout << endl << "DAY 07" << endl;
     ReadData();
@@ -67,8 +67,6 @@ void Day07::ReadData()
 	{
 		return;
 	}
-
-	int id = 0;
 
 	regex regex_container{ "([a-z ]+) bags" };
 	regex regex_contents{ "([0-9]+) ([a-z ]+) bags?" };

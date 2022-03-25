@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Day08::Day08() : mInputFile{ "inputs/day08.txt" }
+Day08::Day08() : mInputFile{ "inputs/Day08.txt" }
 {
 	cout << endl << "DAY 08" << endl;
     ReadData();
@@ -24,7 +24,7 @@ void Day08::Puzzle2()
 	// Swap one instruction and try the code.
 	// If success, the code is correct.
 	// If not, restore the instruction and swap the next one
-	for (int i = 0; i < mIns.size(); ++i)
+	for (size_t i = 0; i < mIns.size(); ++i)
 	{
 		if (SwapInstruction(i))
 		{
@@ -41,7 +41,7 @@ bool Day08::ExecuteProgram()
 	ResetInstructions();
 	mAccumulator = 0;
 
-	int opIdx = 0;
+	size_t opIdx = 0;
 	while (opIdx < mIns.size())
 	{
 		auto& ins = mIns[opIdx];
